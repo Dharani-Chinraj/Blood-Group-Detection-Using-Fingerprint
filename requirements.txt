@@ -1,0 +1,6 @@
+py7zr
+opencv-python-headless
+tensorflow
+pillow
+pandas
+numpy
