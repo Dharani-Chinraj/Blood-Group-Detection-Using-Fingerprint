@@ -62,9 +62,14 @@ if db_cursor.fetchone()[0] == 0:
 @st.cache_resource
 def load_model_file():
     if not os.path.exists("fingerprint_blood_model.keras"):
+        # Combine split parts first
+        with open("fingerprint_blood_model.7z", "wb") as outfile:
+            for part in ["fingerprint_blood_model.7z.001", "fingerprint_blood_model.7z.002"]:
+                with open(part, "rb") as infile:
+                    outfile.write(infile.read())
+        # Extract the combined archive
         with py7zr.SevenZipFile("fingerprint_blood_model.7z", mode='r') as archive:
             archive.extractall()
-
     return load_model("fingerprint_blood_model.keras")
 
 model = load_model_file()
