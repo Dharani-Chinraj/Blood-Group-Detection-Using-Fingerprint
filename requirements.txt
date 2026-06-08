@@ -1,7 +1,7 @@
-tensorflow-cpu==2.13.0
-opencv-python-headless==4.8.1.78
-py7zr==0.20.8
-numpy==1.24.3
+tensorflow-cpu==2.15.0
+opencv-python-headless
+py7zr
+numpy
 pillow
 pandas
 streamlit
